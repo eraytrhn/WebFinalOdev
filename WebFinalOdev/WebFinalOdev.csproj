@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Muzik\" />
+    <Folder Include="Views\Kitap\" />
+    <Folder Include="Views\HobiUrunu\" />
+    <Folder Include="Views\TeknolojikAlet\" />
+    <Folder Include="Views\Resim\" />
+    <Folder Include="Views\Oyun\" />
+  </ItemGroup>
+
 </Project>
