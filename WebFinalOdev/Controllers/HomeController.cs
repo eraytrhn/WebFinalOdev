@@ -28,6 +28,32 @@ namespace WebFinalOdev.Controllers
             return View();
         }
 
+        public IActionResult HobiUrunu()
+        {
+            return View();
+        }
+        public IActionResult Kitap()
+        {
+            return View();
+        }
+        public IActionResult Muzik()
+        {
+            return View();
+        }
+
+        public IActionResult Oyun()
+        {
+            return View();
+        }
+        public IActionResult Resim()
+        {
+            return View();
+        }
+        public IActionResult TeknolojikAlet()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

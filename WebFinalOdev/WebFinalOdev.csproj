@@ -7,10 +7,13 @@
   <ItemGroup>
     <Folder Include="Views\Muzik\" />
     <Folder Include="Views\Kitap\" />
-    <Folder Include="Views\HobiUrunu\" />
     <Folder Include="Views\TeknolojikAlet\" />
     <Folder Include="Views\Resim\" />
     <Folder Include="Views\Oyun\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
 </Project>
