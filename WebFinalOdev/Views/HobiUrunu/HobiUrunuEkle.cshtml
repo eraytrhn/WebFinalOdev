@@ -13,14 +13,44 @@
         <form asp-action="HobiUrunuYeni">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="SiraNo" class="control-label"></label>
+                <input asp-for="SiraNo" class="form-control" />
+                <span asp-validation-for="SiraNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrunAdi" class="control-label"></label>
+                <input asp-for="UrunAdi" class="form-control" />
+                <span asp-validation-for="UrunAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UreticiAdi" class="control-label"></label>
+                <input asp-for="UreticiAdi" class="form-control" />
+                <span asp-validation-for="UreticiAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrunTuru" class="control-label"></label>
+                <input asp-for="UrunTuru" class="form-control" />
+                <span asp-validation-for="UrunTuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UretimYili" class="control-label"></label>
+                <input asp-for="UretimYili" class="form-control" />
+                <span asp-validation-for="UretimYili" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat" class="control-label"></label>
+                <input asp-for="Fiyat" class="form-control" />
+                <span asp-validation-for="Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="HobiUrunuListe">Listeye Dön</a>
 </div>
 
 @section Scripts {

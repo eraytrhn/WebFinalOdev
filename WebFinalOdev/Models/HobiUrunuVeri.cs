@@ -7,5 +7,6 @@ namespace WebFinalOdev.Models
 {
     public class HobiUrunuVeri
     {
+        public static List<HobiUrunu> HobiUrunuleri = new List<HobiUrunu>() { };
     }
 }

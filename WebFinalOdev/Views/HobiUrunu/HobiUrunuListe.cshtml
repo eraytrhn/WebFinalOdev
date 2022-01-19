@@ -7,11 +7,29 @@
 <h1>HobiUrunuListele</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="HobiUrunuEkle">Yeni Urun Ekle</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SiraNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UreticiAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunTuru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UretimYili)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -19,9 +37,27 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.DisplayFor(modelItem => item.SiraNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UreticiAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunTuru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UretimYili)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "MuzikGuncelle", new { id = item.SiraNo }) |
+                @Html.ActionLink("Detaylar", "MuzikDetay", new { id = item.SiraNo }) |
+                @Html.ActionLink("Sil", "MuzikSil", new { id = item.SiraNo })
             </td>
         </tr>
 }
