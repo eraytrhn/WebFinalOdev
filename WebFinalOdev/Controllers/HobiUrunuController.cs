@@ -9,20 +9,20 @@ namespace WebFinalOdev.Controllers
 {
     public class HobiUrunuController : Controller
     {
-        // GET: HobiUrunleri
-        public ActionResult Index()
+        public IActionResult HobiUrunuListe()
         {
-            return View();
+            return View(Models.HobiUrunuVeri.HobiUrunuleri);
         }
 
         // GET: HobiUrunleri/Details/5
-        public ActionResult Details(int id)
+        public ActionResult HobiUrunuDetay(int id)
         {
-            return View();
+            var r = Models.HobiUrunuVeri.HobiUrunuleri.FirstOrDefault(x => x.SiraNo == id);
+            return View(r);
         }
 
         // GET: HobiUrunleri/Create
-        public ActionResult Create()
+        public ActionResult HobiUrunuEkle()
         {
             return View();
         }
@@ -30,58 +30,50 @@ namespace WebFinalOdev.Controllers
         // POST: HobiUrunleri/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult HobiUrunuEkle(Models.HobiUrunu hobiUrunuEkle)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Models.HobiUrunuVeri.HobiUrunuleri.Add(hobiUrunuEkle);
+            return RedirectToAction("HobiUrunuListe");
         }
 
         // GET: HobiUrunleri/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult HobiUrunuDuzenle(int id)
         {
-            return View();
+            //  Linq
+            //select top 1 * from hobiUrunular where SiraNo = hobiUrunuSiraNo
+            var r = Models.HobiUrunuVeri.HobiUrunuleri.FirstOrDefault(x => x.SiraNo == id);
+            return View(r);
         }
 
         // POST: HobiUrunleri/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult HobiUrunuDuzenle(Models.HobiUrunu hobiUrunu)
         {
-            try
+            var r = Models.HobiUrunuVeri.HobiUrunuleri.FirstOrDefault(x => x.SiraNo == hobiUrunu.SiraNo);
+
+            if (r == null)
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("HobiUrunuListe");
             }
-            catch
-            {
-                return View();
-            }
+
+            r.UrunAdi = hobiUrunu.UrunAdi;
+            r.UreticiAdi = hobiUrunu.UreticiAdi;
+            r.UrunTuru = hobiUrunu.UrunTuru;
+            r.UretimYili = hobiUrunu.UretimYili;
+            r.Fiyat = hobiUrunu.Fiyat;
+
+            return RedirectToAction("hobiUrunuListele");
         }
 
         // GET: HobiUrunleri/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult HobiUrunuSil(int id)
         {
-            return View();
-        }
+            var r = Models.HobiUrunuVeri.HobiUrunuleri.FirstOrDefault(x => x.SiraNo == id);
 
-        // POST: HobiUrunleri/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Models.HobiUrunuVeri.HobiUrunuleri.Remove(r);
+
+            return View(r);
         }
     }
 }
