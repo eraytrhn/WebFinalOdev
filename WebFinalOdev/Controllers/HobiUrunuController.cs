@@ -63,7 +63,7 @@ namespace WebFinalOdev.Controllers
             r.UretimYili = hobiUrunu.UretimYili;
             r.Fiyat = hobiUrunu.Fiyat;
 
-            return RedirectToAction("hobiUrunuListele");
+            return RedirectToAction("HobiUrunuListe");
         }
 
         // GET: HobiUrunleri/Delete/5

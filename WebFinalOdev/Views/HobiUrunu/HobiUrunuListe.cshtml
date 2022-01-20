@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.Fiyat)
             </td>
             <td>
-                @Html.ActionLink("Düzenle", "MuzikGuncelle", new { id = item.SiraNo }) |
-                @Html.ActionLink("Detaylar", "MuzikDetay", new { id = item.SiraNo }) |
-                @Html.ActionLink("Sil", "MuzikSil", new { id = item.SiraNo })
+                @Html.ActionLink("Düzenle", "HobiUrunuDuzenle", new { id = item.SiraNo }) |
+                @Html.ActionLink("Detaylar", "HobiUrunuDetay", new { id = item.SiraNo }) |
+                @Html.ActionLink("Sil", "HobiUrunuSil", new { id = item.SiraNo })
             </td>
         </tr>
 }
